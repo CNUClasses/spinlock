@@ -17,7 +17,8 @@ using namespace std;
 //DO NOT USE SPINLOCKS, USE MUTEXES INSTEAD!
 
 //a poor substitute for a mutex
-SpinLock lck;
+//SpinLock lck;
+mutex lck;
 
 //void thrdfunc(int i){
 void thrdfunc(){
@@ -26,6 +27,7 @@ void thrdfunc(){
 	 std::cout<<"	Thread:"<<this_id<<" trying to get lock..."<<std::endl;
 	 lck.lock();
 	std::cout<<"		Thread:"<<this_id<<"Got Lock! exiting"<<std::endl;
+	lck.unlock();
 }
 
 
