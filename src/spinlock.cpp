@@ -17,8 +17,8 @@ using namespace std;
 //DO NOT USE SPINLOCKS, USE MUTEXES INSTEAD!
 
 //a poor substitute for a mutex
-//SpinLock lck;
-mutex lck;
+SpinLock lck;
+//mutex lck;
 
 //void thrdfunc(int i){
 void thrdfunc(){
